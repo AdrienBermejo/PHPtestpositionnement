@@ -12,13 +12,20 @@ function main(){
     $poire = ["nom" => "Poire", "prix" => 12, "quantite" => 5];
     $pomme = ["nom" => "Pomme", "prix" => 1, "quantite" => 10];
 
-    $somme = calculerSousTotal($banane) + calculerSousTotal($poire) + calculerSousTotal($pomme);
+    $prixBanane = calculerSousTotal($banane);
+    $prixPoire = calculerSousTotal($poire);
+    $prixPomme = calculerSousTotal($pomme);
+    $somme = $prixBanane + $prixPoire + $prixPomme;
     if ($somme>50){
         $reduction = ($somme*(10/100));
         $total = $somme - $reduction;
         echo "Le total de réduction sur votre panier est de ".$reduction."€. ";
+        echo "Le total de votre commande est de ".$total."€. ";
     }  
-
+    else{
+        echo "le total de votre commande est de ".$somme."€. ";
+    }
+    
 }
 
 
